@@ -311,7 +311,7 @@ func newConn(dsn string) (*Conn, error) {
 		trinoCatalogHeader:         query.Get("catalog"),
 		trinoSchemaHeader:          query.Get("schema"),
 		trinoSessionHeader:         query.Get("session_properties"),
-		trinoExtraCredentialHeader: query.Get("extra_credential"),
+		trinoExtraCredentialHeader: query.Get("extra_credentials"),
 	} {
 		if v != "" {
 			c.httpHeaders.Add(k, v)
