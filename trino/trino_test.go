@@ -68,7 +68,7 @@ func TestExtraCredentials(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	want := "http://foobar@localhost:8080?extra_credentials=token%3DmYtOkEn%2CotherToken%3DoThErToKeN&source=trino-go-client"
+	want := "http://foobar@localhost:8080?extra_credential=token%3DmYtOkEn%2CotherToken%3DoThErToKeN&source=trino-go-client"
 	if dsn != want {
 		t.Fatal("unexpected dsn:", dsn)
 	}

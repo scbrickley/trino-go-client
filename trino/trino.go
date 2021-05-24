@@ -207,7 +207,7 @@ func (c *Config) FormatDSN() (string, error) {
 		"catalog":            c.Catalog,
 		"schema":             c.Schema,
 		"session_properties": strings.Join(sessionkv, ","),
-		"extra_credentials":  strings.Join(credkv, ","),
+		"extra_credential":   strings.Join(credkv, ","),
 		"custom_client":      c.CustomClientName,
 	} {
 		if v != "" {
@@ -311,7 +311,7 @@ func newConn(dsn string) (*Conn, error) {
 		trinoCatalogHeader:         query.Get("catalog"),
 		trinoSchemaHeader:          query.Get("schema"),
 		trinoSessionHeader:         query.Get("session_properties"),
-		trinoExtraCredentialHeader: query.Get("extra_credentials"),
+		trinoExtraCredentialHeader: query.Get("extra_credential"),
 	} {
 		if v != "" {
 			c.httpHeaders.Add(k, v)
